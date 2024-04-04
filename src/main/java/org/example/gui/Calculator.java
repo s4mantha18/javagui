@@ -14,9 +14,10 @@ import javafx.stage.Stage;
 
 public class Calculator extends Application{
 
-    int num1;
-    int num2;
+    double num1;
+    double num2;
     String operation;
+    String screenResult;
 
     Button btnp,btnce,btnc,btnb,btnf,btnpow,btnsqrt,btndivision,btnmult,btnsub,
             btnadd,btnneg,btndot,btnequals,btn1,btn2,btn3,btn4,btn5,btn6,btn7,btn8,btn9,btn0;
@@ -25,139 +26,184 @@ public class Calculator extends Application{
     @Override
     public void start(Stage stage) throws Exception {
         screen = new TextField();
-        screen.prefWidth(320);
+        screen.prefWidth(100);
         screen.prefHeight(100);
         screen.setText("HELLO!");
 
         btnp = new Button("%");
-        btnp.setPrefWidth(320);
+        btnp.setPrefWidth(100);
         btnp.setPrefHeight(100);
         btnp.setOnAction(e -> {
             num1 = Integer.parseInt(screen.getText());
-            screen.setText("%");
-            operation = screen.getText();
+            operation = "%";
         });
 
 
 
         btnce = new Button("CE");
-        btnce.setPrefWidth(320);
+        btnce.setPrefWidth(100);
         btnce.setPrefHeight(100);
         btnce.setOnAction(e -> {
             screen.setText("");
         });
 
         btnc = new Button("C");
-        btnc.setPrefWidth(320);
+        btnc.setPrefWidth(100);
         btnc.setPrefHeight(100);
         btnc.setOnAction(e -> {
             screen.setText("");
         });
 
         btnb = new Button("CLR");
-        btnb.setPrefWidth(320);
+        btnb.setPrefWidth(100);
         btnb.setPrefHeight(100);
+        btnb.setOnAction(e ->{
+            String currenttext = screen.getText();
+            screen.setText(currenttext.substring(0,currenttext.length()-1));
+        });
 
         btnf = new Button("1/x");
-        btnf.setPrefWidth(320);
+        btnf.setPrefWidth(100);
         btnf.setPrefHeight(100);
 
         btnpow = new Button("x2");
-        btnpow.setPrefWidth(320);
+        btnpow.setPrefWidth(100);
         btnpow.setPrefHeight(100);
+        btnpow.setOnAction(e ->{
+            num1 = Double.parseDouble(screen.getText());
+            screen.setText(String.valueOf(num1*num1));
+        });
 
         btnsqrt = new Button("sqrt");
-        btnsqrt.setPrefWidth(320);
+        btnsqrt.setPrefWidth(100);
         btnsqrt.setPrefHeight(100);
+        btnsqrt.setOnAction(e ->{
+            num1 = Double.parseDouble(screen.getText());
+            screen.setText(String.valueOf(Math.sqrt(num1)));
+        });
 
         btndivision = new Button("/");
-        btndivision.setPrefWidth(320);
+        btndivision.setPrefWidth(100);
         btndivision.setPrefHeight(100);
         btndivision.setOnAction(e ->{
-            num1 = Integer.parseInt(screen.getText());
-            screen.setText("/");
-            operation = screen.getText();
+            num1 = Double.parseDouble(screen.getText());
+            operation = "/";
+            screen.setText("");
         });
 
 
         btnmult = new Button("*");
-        btnmult.setPrefWidth(320);
+        btnmult.setPrefWidth(100);
         btnmult.setPrefHeight(100);
         btnmult.setOnAction(e ->{
-            num1 = Integer.parseInt(screen.getText());
-            screen.setText("*");
-            operation = screen.getText();
+            num1 = Double.parseDouble(screen.getText());
+            operation = "*";
         });
 
         btnsub = new Button("-");
-        btnsub.setPrefWidth(320);
+        btnsub.setPrefWidth(100);
         btnsub.setPrefHeight(100);
         btnsub.setOnAction(e ->{
-            num1 = Integer.parseInt(screen.getText());
-            screen.setText("-");
-            operation = screen.getText();
+            num1 = Double.parseDouble(screen.getText());
+            operation = "-";
         });
 
         btnadd = new Button("+");
-        btnadd.setPrefWidth(320);
+        btnadd.setPrefWidth(100);
         btnadd.setPrefHeight(100);
         btnadd.setOnAction(e ->{
-            num1 = Integer.parseInt(screen.getText());
-            screen.setText("+");
-            operation = screen.getText();
+            num1 = Double.parseDouble(screen.getText());
+            operation = "+";
         });
 
         btnneg = new Button("+/-");
-        btnneg.setPrefWidth(320);
+        btnneg.setPrefWidth(100);
         btnneg.setPrefHeight(100);
 
         btndot = new Button(".");
-        btndot.setPrefWidth(320);
+        btndot.setPrefWidth(100);
         btndot.setPrefHeight(100);
         btndot.setOnAction(e -> {
-            if (screen.getText().contains(".")) {
-            }
-            else {
+            if (!screen.getText().contains(".")) {
                 screen.setText(screen.getText() + btndot.getText());
             }
+
         });
 
         btnequals = new Button("=");
-        btnequals.setPrefWidth(320);
+        btnequals.setPrefWidth(100);
         btnequals.setPrefHeight(100);
         btnequals.setOnAction(e ->{
-            num2 = Integer.parseInt(screen.getText());
-            int Result = 0;
+            num2 = Double.parseDouble(screen.getText());
+            double Result = 0;
             switch (operation) {
                 case "+":
-                    Result = num1 + num2;
+                    Result = (num1 + num2);
+                    screenResult = String.valueOf(Result);
+                    if (screenResult.endsWith(".0")){
+                        int intResult = (int) Result;
+                        screen.setText(String.valueOf(intResult));
+                    }
+                    else {
+                        screen.setText(screenResult);
+                    }
                     break;
                 case "-":
-                    Result = num1 - num2;
+                    Result = (num1 - num2);
+                    screenResult = String.valueOf(Result);
+                    if (screenResult.endsWith(".0")){
+                        int intResult = (int) Result;
+                        screen.setText(String.valueOf(intResult));
+                    }
+                    else {
+                        screen.setText(screenResult);
+                    }
                     break;
                 case "*":
-                    Result = num1*num2;
+                    Result = (num1*num2);
+                    screenResult = String.valueOf(Result);
+                    if (screenResult.endsWith(".0")){
+                        int intResult = (int) Result;
+                        screen.setText(String.valueOf(intResult));
+                    }
+                    else {
+                        screen.setText(screenResult);
+                    }
                     break;
                 case "/":
-                    Result = num1/num2;
+                    Result = (num1/num2);
+                    screenResult = String.valueOf(Result);
+                    if (screenResult.endsWith(".0")){
+                        int intResult = (int) Result;
+                        screen.setText(String.valueOf(intResult));
+                    }
+                    else {
+                        screen.setText(screenResult);
+                    }
                     break;
                 case "%":
-                    Result = num1%num2;
+                    Result = (num1%num2);
+                    screenResult = String.valueOf(Result);
+                    if (screenResult.endsWith(".0")){
+                        int intResult = (int) Result;
+                        screen.setText(String.valueOf(intResult));
+                    }
+                    else {
+                        screen.setText(screenResult);
+                    }
                     break;
             }
             screen.setText(String.valueOf(Result));
         });
 
         btn0 = new Button("0");
-        btn0.setPrefWidth(320);
+        btn0.setPrefWidth(100);
         btn0.setPrefHeight(100);
         btn0.setOnAction(e -> {
             if (screen.getText().isEmpty()){
                 screen.setText(btn0.getText());
-            } else if(screen.getText().contains(operation)) {
-                screen.setText(btn0.getText());
-            } else{
-                screen.setText(screen.getText()+btn0.getText());
+            }else {
+                screen.setText(screen.getText().concat("0"));
             }
         });
 
@@ -167,10 +213,8 @@ public class Calculator extends Application{
         btn1.setOnAction(e -> {
             if (screen.getText().isEmpty()){
                 screen.setText(btn1.getText());
-            } else if(screen.getText().contains(operation)) {
-                screen.setText(btn1.getText());
-            } else{
-                screen.setText(screen.getText()+btn1.getText());
+            } else {
+                screen.setText(screen.getText()+"1");
             }
         });
 
@@ -179,8 +223,6 @@ public class Calculator extends Application{
         btn2.setPrefHeight(100);
         btn2.setOnAction(e -> {
             if (screen.getText().isEmpty()){
-                screen.setText(btn2.getText());
-            } else if(screen.getText().contains(operation)) {
                 screen.setText(btn2.getText());
             } else{
                 screen.setText(screen.getText()+btn2.getText());
@@ -193,9 +235,7 @@ public class Calculator extends Application{
         btn3.setOnAction(e -> {
             if (screen.getText().isEmpty()){
                 screen.setText(btn3.getText());
-            } else if(screen.getText().contains(operation)) {
-                screen.setText(btn3.getText());
-            } else{
+            }else{
                 screen.setText(screen.getText()+btn3.getText());
             }
         });
@@ -205,8 +245,6 @@ public class Calculator extends Application{
         btn4.setPrefHeight(100);
         btn4.setOnAction(e -> {
             if (screen.getText().isEmpty()){
-                screen.setText(btn4.getText());
-            } else if(screen.getText().contains(operation)) {
                 screen.setText(btn4.getText());
             } else{
                 screen.setText(screen.getText()+btn4.getText());
@@ -219,8 +257,6 @@ public class Calculator extends Application{
         btn5.setOnAction(e -> {
             if (screen.getText().isEmpty()){
                 screen.setText(btn5.getText());
-            } else if(screen.getText().contains(operation)) {
-                screen.setText(btn5.getText());
             } else{
                 screen.setText(screen.getText()+btn5.getText());
             }
@@ -231,8 +267,6 @@ public class Calculator extends Application{
         btn6.setPrefHeight(100);
         btn6.setOnAction(e -> {
             if (screen.getText().isEmpty()){
-                screen.setText(btn6.getText());
-            } else if(screen.getText().contains(operation)) {
                 screen.setText(btn6.getText());
             } else{
                 screen.setText(screen.getText()+btn6.getText());
@@ -245,9 +279,7 @@ public class Calculator extends Application{
         btn7.setOnAction(e -> {
             if (screen.getText().isEmpty()){
                 screen.setText(btn7.getText());
-            } else if(screen.getText().contains(operation)) {
-                screen.setText(btn7.getText());
-            } else{
+            }else{
                 screen.setText(screen.getText()+btn7.getText());
             }
         });
@@ -258,10 +290,8 @@ public class Calculator extends Application{
         btn8.setOnAction(e -> {
             if (screen.getText().isEmpty()){
                 screen.setText(btn8.getText());
-            } else if(screen.getText().contains(operation)) {
-                screen.setText(btn8.getText());
             } else{
-                screen.setText(screen.getText()+btn8.getText());
+                screen.setText(screen.getText().concat(btn8.getText()));
             }
         });
 
@@ -270,8 +300,6 @@ public class Calculator extends Application{
         btn9.setPrefHeight(100);
         btn9.setOnAction(e -> {
             if (screen.getText().isEmpty()){
-                screen.setText(btn9.getText());
-            } else if(screen.getText().contains(operation)) {
                 screen.setText(btn9.getText());
             } else{
                 screen.setText(screen.getText()+btn9.getText());
