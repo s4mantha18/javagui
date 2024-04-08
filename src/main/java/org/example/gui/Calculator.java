@@ -36,6 +36,7 @@ public class Calculator extends Application{
         btnp.setOnAction(e -> {
             num1 = Integer.parseInt(screen.getText());
             operation = "%";
+            screen.setText("");
         });
 
 
@@ -66,12 +67,13 @@ public class Calculator extends Application{
         btnf.setPrefWidth(100);
         btnf.setPrefHeight(100);
 
-        btnpow = new Button("x2");
+        btnpow = new Button("pow");
         btnpow.setPrefWidth(100);
         btnpow.setPrefHeight(100);
         btnpow.setOnAction(e ->{
             num1 = Double.parseDouble(screen.getText());
-            screen.setText(String.valueOf(num1*num1));
+            operation = "pow";
+            screen.setText("");
         });
 
         btnsqrt = new Button("sqrt");
@@ -98,6 +100,7 @@ public class Calculator extends Application{
         btnmult.setOnAction(e ->{
             num1 = Double.parseDouble(screen.getText());
             operation = "*";
+            screen.setText("");
         });
 
         btnsub = new Button("-");
@@ -106,6 +109,8 @@ public class Calculator extends Application{
         btnsub.setOnAction(e ->{
             num1 = Double.parseDouble(screen.getText());
             operation = "-";
+            screen.setText("");
+            screen.setText("");
         });
 
         btnadd = new Button("+");
@@ -114,6 +119,7 @@ public class Calculator extends Application{
         btnadd.setOnAction(e ->{
             num1 = Double.parseDouble(screen.getText());
             operation = "+";
+            screen.setText("");
         });
 
         btnneg = new Button("+/-");
@@ -133,6 +139,7 @@ public class Calculator extends Application{
         btnequals = new Button("=");
         btnequals.setPrefWidth(100);
         btnequals.setPrefHeight(100);
+        btnequals.setStyle("-fx-background-color:blue");
         btnequals.setOnAction(e ->{
             num2 = Double.parseDouble(screen.getText());
             double Result = 0;
@@ -192,6 +199,8 @@ public class Calculator extends Application{
                         screen.setText(screenResult);
                     }
                     break;
+                case "pow":
+                    Result = Math.pow(num1, num2);
             }
             screen.setText(String.valueOf(Result));
         });
@@ -202,7 +211,9 @@ public class Calculator extends Application{
         btn0.setOnAction(e -> {
             if (screen.getText().isEmpty()){
                 screen.setText(btn0.getText());
-            }else {
+            }else if (screen.getText().contains(" ")){
+                screen.setText("0");
+            } else {
                 screen.setText(screen.getText().concat("0"));
             }
         });
@@ -213,8 +224,10 @@ public class Calculator extends Application{
         btn1.setOnAction(e -> {
             if (screen.getText().isEmpty()){
                 screen.setText(btn1.getText());
+            }else if (screen.getText().contains(" ")){
+                screen.setText("1");
             } else {
-                screen.setText(screen.getText()+"1");
+                screen.setText(screen.getText().concat("1"));
             }
         });
 
@@ -224,8 +237,10 @@ public class Calculator extends Application{
         btn2.setOnAction(e -> {
             if (screen.getText().isEmpty()){
                 screen.setText(btn2.getText());
-            } else{
-                screen.setText(screen.getText()+btn2.getText());
+            }else if (screen.getText().contains(" ")){
+                screen.setText("2");
+            } else {
+                screen.setText(screen.getText().concat("2"));
             }
         });
 
@@ -235,8 +250,10 @@ public class Calculator extends Application{
         btn3.setOnAction(e -> {
             if (screen.getText().isEmpty()){
                 screen.setText(btn3.getText());
-            }else{
-                screen.setText(screen.getText()+btn3.getText());
+            }else if (screen.getText().contains(" ")){
+                screen.setText("3");
+            } else {
+                screen.setText(screen.getText().concat("3"));
             }
         });
 
@@ -246,8 +263,10 @@ public class Calculator extends Application{
         btn4.setOnAction(e -> {
             if (screen.getText().isEmpty()){
                 screen.setText(btn4.getText());
-            } else{
-                screen.setText(screen.getText()+btn4.getText());
+            }else if (screen.getText().contains(" ")){
+                screen.setText("4");
+            } else {
+                screen.setText(screen.getText().concat("4"));
             }
         });
 
@@ -257,8 +276,10 @@ public class Calculator extends Application{
         btn5.setOnAction(e -> {
             if (screen.getText().isEmpty()){
                 screen.setText(btn5.getText());
-            } else{
-                screen.setText(screen.getText()+btn5.getText());
+            }else if (screen.getText().contains(" ")){
+                screen.setText("5");
+            } else {
+                screen.setText(screen.getText().concat("5"));
             }
         });
 
@@ -268,8 +289,10 @@ public class Calculator extends Application{
         btn6.setOnAction(e -> {
             if (screen.getText().isEmpty()){
                 screen.setText(btn6.getText());
-            } else{
-                screen.setText(screen.getText()+btn6.getText());
+            }else if (screen.getText().contains(" ")){
+                screen.setText("6");
+            } else {
+                screen.setText(screen.getText().concat("6"));
             }
         });
 
@@ -279,8 +302,10 @@ public class Calculator extends Application{
         btn7.setOnAction(e -> {
             if (screen.getText().isEmpty()){
                 screen.setText(btn7.getText());
-            }else{
-                screen.setText(screen.getText()+btn7.getText());
+            }else if (screen.getText().contains(" ")){
+                screen.setText("7");
+            } else {
+                screen.setText(screen.getText().concat("7"));
             }
         });
 
@@ -289,9 +314,11 @@ public class Calculator extends Application{
         btn8.setPrefHeight(100);
         btn8.setOnAction(e -> {
             if (screen.getText().isEmpty()){
-                screen.setText(btn8.getText());
-            } else{
-                screen.setText(screen.getText().concat(btn8.getText()));
+                screen.setText(btn9.getText());
+            }else if (screen.getText().contains(" ")){
+                screen.setText("8");
+            } else {
+                screen.setText(screen.getText().concat("8"));
             }
         });
 
@@ -301,10 +328,11 @@ public class Calculator extends Application{
         btn9.setOnAction(e -> {
             if (screen.getText().isEmpty()){
                 screen.setText(btn9.getText());
-            } else{
-                screen.setText(screen.getText()+btn9.getText());
+            }else if (screen.getText().contains(" ")){
+                screen.setText("9");
+            } else {
+                screen.setText(screen.getText().concat("9"));
             }
-
 
         });
 
