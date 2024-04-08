@@ -27,8 +27,8 @@ public class Calculator extends Application{
     public void start(Stage stage) throws Exception {
         screen = new TextField();
         screen.prefWidth(100);
-        screen.prefHeight(100);
-        screen.setText("HELLO!");
+        screen.prefHeight(400);
+        screen.setText("");
 
         btnp = new Button("%");
         btnp.setPrefWidth(100);
@@ -313,7 +313,7 @@ public class Calculator extends Application{
         btn8.setPrefHeight(100);
         btn8.setOnAction(e -> {
             if (screen.getText().isEmpty()){
-                screen.setText(btn9.getText());
+                screen.setText(btn8.getText());
             }else if (screen.getText().contains(" ")){
                 screen.setText("8");
             } else {
