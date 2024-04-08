@@ -336,6 +336,10 @@ public class Calculator extends Application{
 
         });
 
+        Button btnclosewindow = new Button("X");
+        btnclosewindow.setId("close-window-button");
+        btn6.setPrefWidth(100);
+        btn6.setPrefHeight(100);
 
 
         GridPane grid = new GridPane();
