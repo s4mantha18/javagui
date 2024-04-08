@@ -340,19 +340,22 @@ public class Calculator extends Application{
         btnclosewindow.setId("close-window-button");
         btn6.setPrefWidth(100);
         btn6.setPrefHeight(100);
+        btnclosewindow.setAlignment(Pos.TOP_RIGHT);
+        btnclosewindow
 
 
         GridPane grid = new GridPane();
         grid.setAlignment(Pos.CENTER);
         grid.setHgap(6);
         grid.setVgap(6);
-        grid.add(screen, 0, 1, 4, 1);
-        grid.addRow(2, btnp, btnce, btnc, btnb);
-        grid.addRow(3, btnf, btnpow, btnsqrt, btndivision);
-        grid.addRow(4, btn7, btn8, btn9, btnmult);
-        grid.addRow(5, btn4, btn5, btn6, btnsub);
-        grid.addRow(6, btn1, btn2, btn3, btnadd);
-        grid.addRow(7, btnneg, btn0, btndot, btnequals);
+        grid.addRow(1, btnclosewindow);
+        grid.add(screen, 0, 2, 4, 1);
+        grid.addRow(3, btnp, btnce, btnc, btnb);
+        grid.addRow(4, btnf, btnpow, btnsqrt, btndivision);
+        grid.addRow(5, btn7, btn8, btn9, btnmult);
+        grid.addRow(6, btn4, btn5, btn6, btnsub);
+        grid.addRow(7, btn1, btn2, btn3, btnadd);
+        grid.addRow(8, btnneg, btn0, btndot, btnequals);
         Scene calculatorpage = new Scene(grid, 400, 600);
         calculatorpage.getStylesheets().add(getClass().getResource("calculatorstyle.css").toExternalForm());
 

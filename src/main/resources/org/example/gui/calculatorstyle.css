@@ -22,3 +22,9 @@ Button:hover{
 Button:pressed{
     -fx-opacity:0.4;
 }
+
+#close-window-button{
+    -fx-background-color:transparent;
+    -fx-font-size : 20px;
+
+}
