@@ -1,4 +1,4 @@
-package com.example.gui;
+package org.example.gui;
 
 import javafx.application.Application;
 import javafx.event.ActionEvent;
