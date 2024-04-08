@@ -26,6 +26,7 @@ public class Calculator extends Application{
     @Override
     public void start(Stage stage) throws Exception {
         screen = new TextField();
+        screen.setId("calculator-screen");
         screen.prefWidth(100);
         screen.prefHeight(400);
         screen.setText("");
@@ -350,6 +351,7 @@ public class Calculator extends Application{
         grid.addRow(7, btnneg, btn0, btndot, btnequals);
         Scene calculatorpage = new Scene(grid, 400, 600);
         calculatorpage.getStylesheets().add(getClass().getResource("calculatorstyle.css").toExternalForm());
+
         stage.setResizable(true);
         stage.setScene(calculatorpage);
         stage.show();

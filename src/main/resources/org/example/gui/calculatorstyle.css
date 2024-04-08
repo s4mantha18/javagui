@@ -2,17 +2,16 @@
     -fx-background-color: black;
 }
 
-#Textfield-screen{
+#calculator-screen{
     -fx-background-color:transparent;
     -fx-text-fill: white;
     -fx-font-size:40px;
-    -fx-text-alignment:center-left;
+    -fx-text-alignment:center-right;
 }
 Button{
     -fx-background-color: grey;
-    -fx-font-size: 20px;
+    -fx-font-size: 25px;
     -fx-text-fill: white;
-    -fx-background-radius: 50px;
     -fx-transition:background-color 0.5s, text-fill 0.5s;
 }
 Button:hover{
