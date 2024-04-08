@@ -341,14 +341,16 @@ public class Calculator extends Application{
         btn6.setPrefWidth(100);
         btn6.setPrefHeight(100);
         btnclosewindow.setAlignment(Pos.TOP_RIGHT);
-        btnclosewindow
+        btnclosewindow.setOnAction(e->{
+
+        });
 
 
         GridPane grid = new GridPane();
         grid.setAlignment(Pos.CENTER);
         grid.setHgap(6);
         grid.setVgap(6);
-        grid.addRow(1, btnclosewindow);
+        grid.add(btnclosewindow,0,1,5,1);
         grid.add(screen, 0, 2, 4, 1);
         grid.addRow(3, btnp, btnce, btnc, btnb);
         grid.addRow(4, btnf, btnpow, btnsqrt, btndivision);
