@@ -348,7 +348,7 @@ public class Calculator extends Application{
         grid.addRow(5, btn4, btn5, btn6, btnsub);
         grid.addRow(6, btn1, btn2, btn3, btnadd);
         grid.addRow(7, btnneg, btn0, btndot, btnequals);
-        Scene calculatorpage = new Scene(grid, 400, 400);
+        Scene calculatorpage = new Scene(grid, 400, 600);
         calculatorpage.getStylesheets().add(getClass().getResource("calculatorstyle.css").toExternalForm());
         stage.setResizable(true);
         stage.setScene(calculatorpage);
