@@ -139,7 +139,6 @@ public class Calculator extends Application{
         btnequals = new Button("=");
         btnequals.setPrefWidth(100);
         btnequals.setPrefHeight(100);
-        btnequals.setStyle("-fx-background-color:blue");
         btnequals.setOnAction(e ->{
             num2 = Double.parseDouble(screen.getText());
             double Result = 0;
@@ -350,6 +349,7 @@ public class Calculator extends Application{
         grid.addRow(6, btn1, btn2, btn3, btnadd);
         grid.addRow(7, btnneg, btn0, btndot, btnequals);
         Scene calculatorpage = new Scene(grid, 400, 400);
+        calculatorpage.getStylesheets().add(getClass().getResource("calculatorstyle.css").toExternalForm());
         stage.setResizable(true);
         stage.setScene(calculatorpage);
         stage.show();
