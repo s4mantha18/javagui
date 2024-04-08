@@ -316,7 +316,7 @@ public class Calculator extends Application{
         Scene scene = new Scene(grid,550,700);
         scene.getStylesheets()
                 .add(getClass()
-                        .getResource("calculatorStyles.css")
+                        .getResource("calculatorstyle.css")
                         .toExternalForm());
         stage.setScene(scene);
         stage.setTitle("My Simple Calculator");
