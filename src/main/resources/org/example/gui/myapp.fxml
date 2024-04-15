@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER_LEFT" spacing="10.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.gui.MyAppController">
+<VBox prefHeight="628.0" prefWidth="282.0" spacing="10.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.gui.MyAppController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
@@ -20,27 +20,39 @@
             <Font name="Arial Rounded MT Bold" size="12.0" />
         </font>
     </TextField>
-    <Label text="lastname" />
+    <Label text="lastname">
+      <font>
+         <Font name="System Bold" size="12.0" />
+      </font></Label>
     <TextField prefHeight="28.0" prefWidth="242.0" style="-fx-background-color: lightgray;">
         <font>
             <Font name="Arial Rounded MT Bold" size="12.0" />
         </font>
     </TextField>
-    <Label text="email" />
+    <Label text="email">
+      <font>
+         <Font name="System Bold" size="12.0" />
+      </font></Label>
     <TextField prefHeight="28.0" prefWidth="242.0" style="-fx-background-color: lightgray;">
         <font>
             <Font name="Arial Rounded MT Bold" size="12.0" />
         </font>
     </TextField>
-    <Label alignment="BASELINE_LEFT" text="course" />
+    <Label alignment="BASELINE_LEFT" text="course">
+      <font>
+         <Font name="System Bold" size="12.0" />
+      </font></Label>
     <TextField prefHeight="28.0" prefWidth="242.0" style="-fx-background-color: lightgray;">
         <font>
             <Font name="Arial Rounded MT Bold" size="12.0" />
         </font>
     </TextField>
-    <Label fx:id="subbutton" />
     <Button alignment="CENTER" contentDisplay="CENTER" onAction="#ButtonClick" prefHeight="28.0" prefWidth="66.0" style="-fx-background-color: gray;" text="SUBMIT" textFill="WHITE">
         <font>
             <Font name="Arial Rounded MT Bold" size="12.0" />
         </font></Button>
+   <Label fx:id="firstname" text="firstname:" />
+   <Label fx:id="lastname" text="lastname:" />
+   <Label fx:id="email" text="email:" />
+   <Label fx:id="course" text="course:" />
 </VBox>
