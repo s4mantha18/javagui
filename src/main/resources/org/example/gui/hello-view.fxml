@@ -11,8 +11,8 @@
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
 
-    <Label fx:id="welcomeText" />
-    <Button alignment="CENTER" onAction="#onHelloButtonClick" prefHeight="52.0" prefWidth="75.0" style="-fx-background-color: gray;" text="BYE" textFill="WHITE">
+    <Label fx:id="welcomeText" text="Hello" />
+    <Button alignment="CENTER" onAction="#onHelloButtonClick" prefHeight="28.0" prefWidth="42.0" style="-fx-background-color: gray;" text="BYE" textFill="WHITE">
       <font>
          <Font name="Arial Rounded MT Bold" size="12.0" />
       </font></Button>
